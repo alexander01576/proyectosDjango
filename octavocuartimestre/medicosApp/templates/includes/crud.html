@@ -1,0 +1,73 @@
+{% if user.is_authenticated %}
+<title>Inicio</title>
+<br>
+<nav>
+    <div class="nav-wrapper">
+        <div class="col s12">
+            <div class="container">
+                <a href="/inicio" class="breadcrumb">Inicio</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<br>
+<div class="row">
+    <div class="col s6 m6">
+        <div class="card light-blue darken-1">
+            <div class="card-content center white-text">
+                <span class="card-title center">Medicos</span>
+                <p>Edicion de medicos</p>
+            </div>
+            <div class="card-action center">
+                <a href="/medicos">Administrar</a>
+            </div>
+        </div>
+    </div>
+    <div class="col s6 m6">
+        <div class="card light-blue darken-1">
+            <div class="card-content center white-text">
+                <span class="card-title center">Conferencias</span>
+                <p>Edicion de las conferencias</p>
+            </div>
+            <div class="card-action center">
+                <a href="/conferencias">Administrar</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col s6 m6">
+        <div class="card light-blue darken-1">
+            <div class="card-content center white-text">
+                <span class="card-title center">Consultas</span>
+                <p>Edicion de Consultas</p>
+            </div>
+            <div class="card-action center">
+                <a href="/consultas">Administrar</a>
+            </div>
+        </div>
+    </div>
+    <div class="col s6 m6">
+        <div class="card light-blue darken-1">
+            <div class="card-content center white-text">
+                <span class="card-title center">Inventario</span>
+                <p>Edicion de Inventario</p>
+            </div>
+            <div class="card-action center">
+                <a href="/inventarios">Administrar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    {% include 'includes/busqueda.html' %}
+{% else %}
+<title>Servicios medicos</title>
+
+<div class="center">
+    <h1>Servicios medicos UTTEC</h1>
+    <img class="responsive-img" src="https://i.ibb.co/hXcW2WG/start-Page.png" width="400px"    height="400px">
+</div>
+
+{% endif %}

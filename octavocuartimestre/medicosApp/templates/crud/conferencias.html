@@ -1,0 +1,62 @@
+{% include 'includes/externos.html' %}
+{% include 'includes/navbar.html' %}
+{% include 'includes/mensajes.html' %}
+
+<title>Conferencias</title>
+
+<nav>
+    <div class="nav-wrapper">
+        <div class="col s12">
+            <div class="container">
+                <a href="/inicio" class="breadcrumb">Inicio</a>
+                <a href="/conferencias" class="breadcrumb">conferencias</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col s4">
+            <h3>Registro de conferencia</h3>
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST">{% csrf_token %}
+                        <div class="from-group">
+                            {{formConferencia.as_p}}
+                            <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col s8">
+            <div class="table-responsive">
+                <h3>Listado de conferencias</h3>
+                <table class="table table-striped py-2">
+                    <thead>
+                        <tr>
+                            <th>Tema</th>
+                            <th>Grupos</th>
+                            <th>Fechas</th>
+                            <th colspan="2">Opcion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for c in conferenciasValues %}
+                        <tr>
+                            <td>{{c.tema}}</td>
+                            <td>{{c.grupo}}</td>
+                            <td>{{c.fecha}}</td>
+
+                            <td><a href="/upconferencia/{{c.id_conferencia}}" class="btn orange darken-4">Editar</a></td>
+                            <td><a href="/delConferencia/{{c.id_conferencia}}"
+                                    class="btn light-blue darken-4">Eliminar</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

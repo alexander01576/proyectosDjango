@@ -1,0 +1,21 @@
+{% include 'includes/externos.html' %}
+{% include 'includes/navbar.html' %}
+{% include 'includes/mensajes.html' %}
+<title>Actualizacion medicos</title>
+<div class="container">
+    <div class="row">
+        <div class="">
+            <h3>Registro de medicos</h3>
+            <div class="">
+                <div class="card-body">
+                    <form method="POST">{% csrf_token %}
+                        <div class="from-group">
+                            {{formMed}}
+                            <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

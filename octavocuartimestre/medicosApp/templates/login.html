@@ -1,0 +1,18 @@
+{% extends "./baseSimple.html" %}
+
+{% block tittle %}Registro medicos{% endblock %}
+
+
+{% block body %}
+<title>Inicio de sesion</title>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button class="btn btn-primary" type="submit">Iniciar sesion</button>
+    <button class="btn teal darken-3"><a href="/registro">Registrarse</a></button>
+
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% if user.is_authenticated %}
+<div class="center">
+    <h1>Busqueda en el sitio</h1>
+    <div class="row">
+        <div class="col m8">
+            <input id="searchbar" onkeyup="search()" type="text" name="search" placeholder="Busqueda de paginas">
+
+        </div>
+        <div class="col m4">
+            
+            <ol id='list'>
+                <li class="pages"><a href="/conferencias">Registro de conferencias</a></li>
+                <li class="pages"><a href="/medicos">Registro de medicos</a></li>
+                <li class="pages"><a href="/consultas">Registro de consultas</a></li>
+                <li class="pages"><a href="/inventarios">Registro de inventarios</a></li>
+                <li class="pages"><a href="/mapa">mapa del sitio</a></li>
+                <li class="pages"><a href="/nosotros">nosotros</a></li>
+                <li class="pages"><a href="/contacto">contacto</a></li>
+                <li class="pages"><a href="/inicio">inicio</a></li>
+                <li class="pages"><a href="/login">inicio de sesion</a></li>
+                <li class="pages"><a href="/registro">registro</a></li>
+                <li class="pages"><a href="/condiciones">condiciones</a></li>
+                <li class="pages"><a href="/cookies">cookies</a></li>
+                <li class="pages"><a href="/privacidad">privacidad</a></li>
+                <li class="pages"><a href="/conferencias">Edicion de conferencias</a></li>
+                <li class="pages"><a href="/medicos">Edicion de medicos</a></li>
+                <li class="pages"><a href="/consultas">Edicion de consultas</a></li>
+                <li class="pages"><a href="/inventarios">Edicion de inventarios</a></li>
+                <li class="pages"><a href="/conferencias">Eliminacion de conferencias</a></li>
+                <li class="pages"><a href="/medicos">Eliminacion de medicos</a></li>
+                <li class="pages"><a href="/consultas">Eliminacion de consultas</a></li>
+                <li class="pages"><a href="/inventarios">Eliminacion de inventarios</a></li>
+            </ol>
+        </div>
+    </div>
+    <script>
+        function search() {
+            let input = document.getElementById('searchbar').value
+            input = input.toLowerCase();
+            let x = document.getElementsByClassName('pages');
+
+            for (i = 0; i < x.length; i++) {
+                if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                    x[i].style.display = "none";
+                }
+                else {
+                    x[i].style.display = "list-item";
+                }
+            }
+        }
+    </script>
+    {% endif %}

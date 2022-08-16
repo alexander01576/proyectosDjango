@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<!--
+
+  Plantilla inicial de Bootstrap 4
+  @author parzibyte
+  Visita: parzibyte.me/blog
+
+-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Plantilla básica para Bootstrap">
+  <meta name="author" content="Parzibyte">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+
+  {% include 'includes/navbar.html' %}
+
+  {% include 'includes/mensajes.html' %}
+
+  <div class="container">
+    {% include 'includes/crud.html' %}
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+{% include 'includes/externos.html' %}
+{% include 'includes/navbar.html' %}
+{% include 'includes/mensajes.html' %}
+
+<title>Medicos</title>
+<nav>
+    <div class="nav-wrapper">
+        <div class="col s12">
+            <div class="container">
+                <a href="/inicio" class="breadcrumb">Inicio</a>
+                <a href="/medicos" class="breadcrumb">Medicos</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col s4">
+            <h3>Registro de medicos</h3>
+            <div class="">
+                <div class="card-body">
+                    <form method="POST">{% csrf_token %}
+                        <div class="from-group">
+                            {{formMed.as_p}}
+                            <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col s8">
+            <div class="table-responsive">
+                <h3>Listado de medicos</h3>
+                <table class="table table-striped py-2">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Ap Paterno</th>
+                            <th>Ap Materno</th>
+                            <th>Edad</th>
+                            <th>Sexo</th>
+                            <th colspan="2">Opcion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for c in medicosValues %}
+                        <tr>
+                            <td>{{c.nomMed}}</td>
+                            <td>{{c.aPat}}</td>
+                            <td>{{c.aPat}}</td>
+                            <td>{{c.edad}}</td>
+                            <td>{{c.sexo}}</td>
+
+                            <td><a href="/upmedico/{{c.id_medico}}" class="btn orange darken-4">Editar</a></td>
+                            <td><a href="/delMedico/{{c.id_medico}}" class="btn light-blue darken-4">Eliminar</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

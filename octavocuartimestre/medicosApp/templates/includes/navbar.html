@@ -1,0 +1,26 @@
+<nav class="nav-extended light-blue darken-1">
+  <div class="nav-wrapper">
+    <a href="/" class="brand-logo">Servicios Medicos</a>
+
+
+    <ul id="nav-mobile" class="right">
+      {% if user.is_authenticated %}
+      <li><a>Iniciaste sesion como: <em>{{user.username}}</em></a></li>
+      {% if user.is_superuser %}
+      <li><a href="/admin/auth/user/">Administracion de usuarios</a></li>
+      {% endif %}
+
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/mapa">mapa del sitio</a></li>
+      <li><a href="/logout">Cerrar sesion</a></li>
+      {% else %}
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/registro">Registro</a></li>
+      <li><a href="/login">Iniciar sesion</a></li>
+      <li><a href="/nosotros">Nosotros</a></li>
+      <li><a href="/contacto">Contacto</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>
+

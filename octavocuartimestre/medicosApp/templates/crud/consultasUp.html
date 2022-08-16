@@ -1,0 +1,19 @@
+{% include 'includes/externos.html' %}
+{% include 'includes/navbar.html' %}
+{% include 'includes/mensajes.html' %}
+<title>Actualizacion consultas </title>
+<div class="container">
+    <div class="row">
+        <h5>Registro de consulta</h5>
+        <div class="">
+            <div class="card-body">
+                <form method="POST">{% csrf_token %}
+                    <div class="from-group">
+                        {{formCons}}
+                        <button type="submit" class="btn btn-success btn-block text-white">Guardar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
